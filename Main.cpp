@@ -7,7 +7,7 @@ using namespace std;
 
 class popFigure
 {
-private:	
+private:
 	//private attributes of pop figures
 	string popName;
 	int popNum;
@@ -100,6 +100,18 @@ void popFigureCollection::addPop()
 
 	popFigure newPop(popName, popNum);
 	PopFigures.push_back(newPop);
+
+	ofstream  outFile("popList.txt", ios::app);
+	if (outFile.is_open()) {
+		// Write the pop figure information to the file
+		outFile << newPop.getInfo() << endl;
+
+		// Close the file
+		outFile.close();
+	}
+	else {
+		cout << "Error opening the file 'pop.txt'" << endl;
+	}
 
 	for (size_t i = 0; i < PopFigures.size(); i++)
 	{
