@@ -44,6 +44,7 @@ public:
 		return popName + to_string(popNum);
 	}
 };
+
 //class that handles collection functionality
 class popFigureCollection {
 private:
@@ -91,7 +92,6 @@ void popFigureCollection::menu()
 	int userChoice = 0;
 	while (userChoice < 1 || userChoice > 4)
 	{
-
 		cout << "---------------------------------" << endl;
 		cout << "Choose an option below: " << endl;
 		cout << "1: Administrator" << endl;
